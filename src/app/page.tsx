@@ -1,6 +1,7 @@
 import { defineQuery } from "next-sanity";
 import Link from "next/link";
 import type { FC } from "react";
+import { DateDisplay } from "~/components/date-display";
 import { client } from "~/sanity/lib/client";
 import { buttonStyles } from "~/styles/components";
 
@@ -34,7 +35,9 @@ const HomePage: FC = async () => {
                 <Link href={`/blog/${post.slug.current}`}>{post.title}</Link>
               </h2>
               {post.subtitle && <p>{post.subtitle}</p>}
-              <p>Published at: {post.publishedAt}</p>
+              <p>
+                Published at: <DateDisplay isoDate={post.publishedAt} />
+              </p>
             </li>
           ))}
         </ul>
