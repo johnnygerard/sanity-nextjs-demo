@@ -2,7 +2,7 @@ import { defineQuery } from "next-sanity";
 import Link from "next/link";
 import type { FC } from "react";
 import { client } from "~/sanity/lib/client";
-import { tw } from "~/utils/tw";
+import { buttonStyles } from "~/styles/components";
 
 const BLOG_POSTS_QUERY = defineQuery(`*[_type == "blogPost"]`);
 
@@ -16,16 +16,7 @@ const HomePage: FC = async () => {
   return (
     <div className="grid min-h-screen place-items-center">
       <div>
-        <Link
-          href="/studio"
-          className={tw([
-            "inline-flex items-center justify-center rounded-md",
-            "bg-gray-900 px-4 py-2",
-            "text-sm font-medium text-gray-50",
-            "transition-colors hover:bg-gray-800",
-            "outline-offset-2 focus-visible:outline-gray-900/40",
-          ])}
-        >
+        <Link href="/studio" className={buttonStyles}>
           Open Sanity Studio
         </Link>
         <hgroup>
