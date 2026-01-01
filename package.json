@@ -55,6 +55,7 @@
     "e2e": "playwright test",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "init": "npm ci && npm run sanity:typegen",
     "lint": "npm run ts-check && eslint",
     "next": "next",
     "sanity": "sanity",

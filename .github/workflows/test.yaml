@@ -15,8 +15,8 @@ jobs:
           check-latest: true
           node-version-file: package.json
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Initialize repository
+        run: npm run init
 
       - name: Run tests
         run: npm test
