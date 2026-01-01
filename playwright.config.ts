@@ -75,7 +75,7 @@ export default defineConfig({
     command: "npm start",
     env: {
       NEXT_PUBLIC_SANITY_DATASET: "production",
-      NEXT_PUBLIC_SANITY_PROJECT_ID: "lv6wsjou",
+      NEXT_PUBLIC_SANITY_PROJECT_ID: "xspmcpfp",
     },
     reuseExistingServer: !process.env.CI,
     url: "http://localhost:3333",
