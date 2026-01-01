@@ -9,9 +9,10 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
 });
 
-const APP_NAME = "appName";
-const TITLE = "title";
-const DESCRIPTION = "description";
+const APP_NAME = "Sanity Demo";
+const TITLE = "Sanity Demo with Next.js";
+const DESCRIPTION =
+  "A demo application showcasing Sanity CMS integrated with Next.js.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://placeholder.example"),
