@@ -56,7 +56,7 @@
     "lint": "npm run ts-check && eslint",
     "next": "next",
     "sanity": "sanity",
-    "sanity:typegen": "sanity schema extract && sanity typegen generate",
+    "sanity:typegen": "sanity schema extract --enforce-required-fields && sanity typegen generate",
     "start": "npm run build && next start -p 3333",
     "test": "vitest run",
     "test:watch": "vitest watch",
