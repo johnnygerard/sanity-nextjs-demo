@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import type { FC, ReactNode } from "react";
 import "~/styles/globals.css";
+import { tw } from "~/utils/tw";
 
 const geistSans = Geist({
   display: "swap",
   subsets: ["latin"],
   variable: "--font-geist-sans",
+});
+
+const geistMono = Geist_Mono({
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
 });
 
 const APP_NAME = "Sanity Demo";
@@ -37,7 +44,7 @@ type Props = {
 const RootLayout: FC<Props> = ({ children }) => {
   return (
     <html
-      className={geistSans.variable}
+      className={tw([geistSans.variable, geistMono.variable])}
       data-scroll-behavior="smooth"
       lang="en-US"
     >
