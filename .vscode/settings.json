@@ -1,0 +1,4 @@
+{
+  "tailwindCSS.classFunctions": ["tw"],
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
