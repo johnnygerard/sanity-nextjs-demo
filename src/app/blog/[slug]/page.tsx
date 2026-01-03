@@ -1,6 +1,7 @@
 import { defineQuery, PortableText } from "next-sanity";
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import type { FC } from "react";
 import { DateDisplay } from "~/components/date-display";
 import { client } from "~/sanity/lib/client";
@@ -25,10 +26,7 @@ const BlogPostPage: FC<Props> = async ({ params }) => {
     { next: { revalidate: 30 } },
   );
 
-  if (post == null) {
-    console.error(`Blog post not found for slug: ${slug}`);
-    return <div>Post not found</div>;
-  }
+  if (post == null) notFound();
 
   return (
     <main className="container mx-auto flex min-h-screen max-w-3xl flex-col gap-4 p-8">
