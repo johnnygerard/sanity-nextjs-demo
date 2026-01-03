@@ -33,12 +33,14 @@ const BlogPostPage: FC<Props> = async ({ params }) => {
       <Link href="/" className="hover:underline">
         ← Back to posts
       </Link>
-      {post.featuredImageAsset?.url && (
+      {post.featuredImageAsset && (
         <Image
           alt={post.featuredImageAsset.altText ?? "Featured image"}
           blurDataURL={post.featuredImageAsset.metadata?.lqip}
           className="aspect-video w-full rounded-xl object-cover"
-          placeholder="blur"
+          placeholder={
+            post.featuredImageAsset.metadata?.lqip ? "blur" : "empty"
+          }
           preload={true}
           sizes="min(100vw, 48rem)"
           src={post.featuredImageAsset._id}
