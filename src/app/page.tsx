@@ -29,32 +29,36 @@ const HomePage: FC = async () => {
             Below are the blog posts fetched from Sanity CMS:
           </p>
         </hgroup>
-        <ul
-          className={tw([
-            "mt-8 w-full max-w-xl bg-white",
-            "divide-y divide-gray-200",
-            "rounded-lg border border-gray-200",
-          ])}
-        >
-          {posts.map((post) => (
-            <li key={post._id} className="px-4 py-4 sm:px-6">
-              <h2 className="text-lg leading-snug font-semibold">
-                <Link
-                  className="text-gray-900 underline-offset-4 hover:underline"
-                  href={`/blog/${post.slug.current}`}
-                >
-                  {post.title}
-                </Link>
-              </h2>
-              {post.subtitle && (
-                <p className="mt-1 text-sm text-gray-600">{post.subtitle}</p>
-              )}
-              <p className="mt-2 text-xs text-gray-500">
-                Published at: <DateDisplay isoDate={post.publishedAt} />
-              </p>
-            </li>
-          ))}
-        </ul>
+        {posts.length ? (
+          <ul
+            className={tw([
+              "mt-8 w-full max-w-xl bg-white",
+              "divide-y divide-gray-200",
+              "rounded-lg border border-gray-200",
+            ])}
+          >
+            {posts.map((post) => (
+              <li key={post._id} className="px-4 py-4 sm:px-6">
+                <h2 className="text-lg leading-snug font-semibold">
+                  <Link
+                    className="text-gray-900 underline-offset-4 hover:underline"
+                    href={`/blog/${post.slug.current}`}
+                  >
+                    {post.title}
+                  </Link>
+                </h2>
+                {post.subtitle && (
+                  <p className="mt-1 text-sm text-gray-600">{post.subtitle}</p>
+                )}
+                <p className="mt-2 text-xs text-gray-500">
+                  Published at: <DateDisplay isoDate={post.publishedAt} />
+                </p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="mt-8 text-gray-600">No blog posts found.</p>
+        )}
       </div>
     </div>
   );
