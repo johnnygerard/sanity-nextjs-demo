@@ -9,11 +9,12 @@ import { tw } from "~/utils/tw";
 const BLOG_POSTS_QUERY = defineQuery(`*[_type == "blogPost"]`);
 
 const HomePage: FC = async () => {
-  const posts = await client.fetch(
-    BLOG_POSTS_QUERY,
-    {},
-    { next: { revalidate: 30 } },
-  );
+  const posts = await client
+    .fetch(BLOG_POSTS_QUERY, {}, { next: { revalidate: 30 } })
+    .catch((error) => {
+      console.error(error);
+      return null;
+    });
 
   return (
     <div className="grid min-h-screen place-items-center">
@@ -29,7 +30,13 @@ const HomePage: FC = async () => {
             Below are the blog posts fetched from Sanity CMS:
           </p>
         </hgroup>
-        {posts.length ? (
+        {posts === null ? (
+          <p className="mt-8 text-red-600">
+            Error loading blog posts. Please try again later.
+          </p>
+        ) : posts.length === 0 ? (
+          <p className="mt-8 text-gray-600">No blog posts found.</p>
+        ) : (
           <ul
             className={tw([
               "mt-8 w-full max-w-xl bg-white",
@@ -56,8 +63,6 @@ const HomePage: FC = async () => {
               </li>
             ))}
           </ul>
-        ) : (
-          <p className="mt-8 text-gray-600">No blog posts found.</p>
         )}
       </div>
     </div>
