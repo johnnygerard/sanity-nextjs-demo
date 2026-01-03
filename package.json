@@ -50,7 +50,7 @@
   "name": "starter-sanity-5-nextjs-16",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "build": "npm run sanity:typegen && next build",
     "dev": "next dev -p 3333",
     "e2e": "playwright test",
     "format": "prettier --write .",

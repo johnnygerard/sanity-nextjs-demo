@@ -19,8 +19,8 @@ jobs:
           check-latest: true
           node-version-file: package.json
 
-      - name: Initialize repository
-        run: npm run init
+      - name: Install dependencies
+        run: npm ci
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
