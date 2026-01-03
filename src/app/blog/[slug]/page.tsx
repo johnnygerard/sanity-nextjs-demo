@@ -41,7 +41,7 @@ const BlogPostPage: FC<Props> = async ({ params }) => {
           placeholder="blur"
           preload={true}
           sizes="min(100vw, 48rem)"
-          src={post.featuredImageAsset.url}
+          src={post.featuredImageAsset._id}
           width={post.featuredImageAsset.metadata?.dimensions?.width}
           height={post.featuredImageAsset.metadata?.dimensions?.height}
         />
