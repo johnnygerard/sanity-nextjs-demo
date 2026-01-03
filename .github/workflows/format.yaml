@@ -4,6 +4,9 @@ on:
     branches: [main]
 jobs:
   format:
+    env:
+      NEXT_PUBLIC_SANITY_DATASET: ${{ vars.NEXT_PUBLIC_SANITY_DATASET }}
+      NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.NEXT_PUBLIC_SANITY_PROJECT_ID }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -15,8 +18,8 @@ jobs:
           check-latest: true
           node-version-file: package.json
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Initialize repository
+        run: npm run init
 
       - name: Check code formatting
         run: npm run format:check

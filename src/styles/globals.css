@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @layer base {
   button:enabled,
@@ -11,9 +12,9 @@
   input,
   select,
   textarea {
-    @apply outline-2 outline-offset-0 outline-transparent;
+    @apply outline-2 outline-offset-2 outline-transparent;
     /* Note that `outline-style` needs the `:focus-visible` pseudo-class to override the `auto` default in Firefox */
-    @apply focus-visible:outline-blue-400 focus-visible:outline-solid;
+    @apply focus-visible:outline-gray-900/40 focus-visible:outline-solid;
   }
 }
 
@@ -33,4 +34,5 @@
 /* @see https://tailwindcss.com/docs/theme#referencing-other-variables */
 @theme inline {
   --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }

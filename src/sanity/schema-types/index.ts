@@ -1,6 +1,6 @@
 import { type SchemaTypeDefinition } from "sanity";
-import { exampleType } from "~/sanity/schema-types/example-type";
+import { blogPostType } from "~/sanity/schema-types/blog-post-type";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [exampleType],
+  types: [blogPostType],
 };
