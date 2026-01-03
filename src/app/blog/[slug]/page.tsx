@@ -13,6 +13,13 @@ const BLOG_POST_QUERY = defineQuery(`
   }
 `);
 
+const BLOG_POST_SLUGS_QUERY = defineQuery(`*[_type == "blogPost"]{ slug }`);
+
+export const generateStaticParams = async () => {
+  const posts = await client.fetch(BLOG_POST_SLUGS_QUERY);
+  return posts.map(({ slug }) => ({ slug: slug.current }));
+};
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
