@@ -22,7 +22,7 @@ const DESCRIPTION =
   "A demo application showcasing Sanity CMS integrated with Next.js.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://placeholder.example"),
+  metadataBase: new URL("https://sanity-nextjs-demo-jgerard.vercel.app"),
   title: {
     template: `%s | ${APP_NAME}`,
     default: TITLE,
