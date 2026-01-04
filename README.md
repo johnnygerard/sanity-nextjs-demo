@@ -1,8 +1,10 @@
-# Sanity 5 Starter with Next.js 16
+# Sanity demo with Next.js
 
-This starter repository facilitates the creation of new Sanity projects with Next.js using the configuration described below.
+This demo project shows how to integrate [Sanity](https://www.sanity.io) with a [Next.js](https://nextjs.org) application using the following configuration:
 
-To learn how to use a GitHub template repository, check out [Creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+- Embedded Sanity Studio
+- Next.js static rendering with ISR (no dynamic rendering)
+- Sanity Content Lake API: `api.sanity.io` (uncached API)
 
 ## Tech Stack
 
