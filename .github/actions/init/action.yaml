@@ -1,0 +1,18 @@
+name: init
+description: Setup Node.js environment, install dependencies, and generate Sanity type definitions.
+runs:
+  using: composite
+  steps:
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v6
+      with:
+        check-latest: true
+        node-version-file: package.json
+
+    - name: Install dependencies
+      run: npm ci
+      shell: bash
+
+    - name: Generate Sanity type definitions
+      run: npm run sanity:typegen
+      shell: bash
