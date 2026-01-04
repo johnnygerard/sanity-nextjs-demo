@@ -19,7 +19,7 @@
 /test-results/
 
 # Environment files
-/.env.local
+/.env*.local
 
 # Sanity
 /.sanity/
